@@ -26,29 +26,33 @@ function outsideClick(e){
 	}
 }
 
+// FAQ modal link
+
+
+
 // Application rate counter
 
-var counter = document.getElementById('counter').getContext('2d');
-var no = 0;
-var pointToFill = 4.72;
-var cw = counter.canvas.width;
-var ch = counter.canvas.height;
-var diff;
+let counter = document.getElementById('counter').getContext('2d');
+let no = 0;
+let pointToFill = 4.72;
+let canvasWidth = counter.canvas.width;
+let canvasHeight = counter.canvas.height;
+let diff;
 
 function fillCounter(){
 	diff =((no/100) * Math.PI*2*10)
 
-	counter.clearRect(0,0,cw,ch);
+	counter.clearRect(0,0,canvasWidth,canvasHeight);
 
-	counter.lineWidth = 15;
+	counter.lineWidth = 13;
 
-	counter.fillStyle = '#fff';
+	counter.fillStyle = '#000000';
 
-	counter.strokeStyle = '#F5E0A9';
+	counter.strokeStyle = '#073c77';
 
 	counter.textAlign = 'center';
 
-	counter.font = "25px monospace";
+	counter.font = "29px monospace";
 
 	counter.fillText(no+'%',100,110);
 
@@ -64,7 +68,30 @@ function fillCounter(){
 	no++;
 }
 
-var fill = setInterval(fillCounter,50);
+let fill = setInterval(fillCounter,50);
+
+// Calculator tabs
+
+var tabButtons =  document.querySelectorAll(".tabContainer .buttonContainer button");
+var tabPanels = document.querySelectorAll(".tabContainer .tabPanel");
+
+function showPanel(panelIndex,colorCode){
+	tabButtons.forEach(function(node){
+		node.style.backgroundColor = "";
+		node.style.color = "";
+	});
+	tabButtons[panelIndex].style.backgroundColor = colorCode;
+	tabButtons[panelIndex].style.color = "white";
+	tabPanels.forEach(function(node){
+		node.style.display = "none";
+	});
+	tabPanels[panelIndex].style.display = "block";
+	tabPanels[panelIndex].style.backgroundColor = colorCode;
+}
+
+showPanel(0, '#f44336');
+
+
 
 
 
