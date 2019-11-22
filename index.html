@@ -76,7 +76,7 @@
 			<div class="container flex-container application">
 				<div class="application-one">
 					<div id="circle1"></div>
-					<div id="shadowring"></div>
+					<!-- <div id="shadowring"></div> -->
 					<div id="circle2"></div>
 					<canvas height="200" width="200" id="counter"/>
 				</div>
@@ -100,8 +100,16 @@
 					<h1>Calculate your monthly installment</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 				</div class="calculator-two">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua.</p>
+					<div  class="tabContainer">
+						<div class="buttonContainer">
+							<button onclick="showPanel(0, '#f44336')">Mortgage</button>
+							<button onclick="showPanel(1, '#4caf50')">Leasing</button>
+							<button onclick="showPanel(2, '#2196f3')">Personal</button>
+						</div>
+						<div class="tabPanel">Tab 1: Content</div>
+						<div class="tabPanel">Tab 2: Content</div>
+						<div class="tabPanel">Tab 3: Content</div>
+					</div>
 				</div>
 		</section>
 
