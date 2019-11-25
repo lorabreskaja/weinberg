@@ -76,7 +76,6 @@
 			<div class="container flex-container application">
 				<div class="application-one">
 					<div id="circle1"></div>
-					<!-- <div id="shadowring"></div> -->
 					<div id="circle2"></div>
 					<canvas height="200" width="200" id="counter"/>
 				</div>
@@ -85,7 +84,31 @@
 					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
 					<div class="flex-container">
 						<i class="fas fa-question-circle"></i>
-						<p>Frequently Asked Questions</p>
+						<a href="#" id="modalFaq" class="faqbutton">Frequently Asked Questions</a>
+						<div id="simpleLink" class="link">
+							<div class="faq-content">
+								<span class="closeFaq">&times;</span>
+								<h2>FAQ</h2>
+								<p>Learn about our services in-depth.</p>
+								<button class="accordion">How the loan interest is established?</button>
+								<div class="panel">
+  								<p>Annual interest is established individually taking into consideration the assessment of your financial capacity, the loan amount, your own portion of funds, the loan market situation and also on periodicity and types of our services used by you.</p>
+								</div>
+
+								<button class="accordion">What minimum portion of own funds is required for obtaining a mortgage loan?</button>
+								<div class="panel">
+  								<p>If you are willing to acquire a dwelling, your own portion of funds may not be lower than 15 percent of the real estate price or value (depends on the lower of the two).</p>
+								</div>
+								<button class="accordion">What is the amount of a loan?</button>
+								<div class="panel">
+  								<p>The loan amount may be individually identified after assessment of the family’s financial potential to repay the loan.</p>
+								</div>
+								<button class="accordion">Who may apply for a loan?</button>
+								<div class="panel">
+  								<p>Every permanent resident of Lithuania, who is at least 18 years of age and receives regular income.</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -98,7 +121,7 @@
 			<div class="container flex-container calculator">
 				<div class="calculator-one">
 					<h1>Calculate your monthly installment</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<p>Use the mortgage loan calculator to calculate a loan instalment that you could pay the bank every month without difficulty and consider the risk of decreased income.</p>
 				</div class="calculator-two">
 					<div  class="tabContainer">
 						<div class="buttonContainer">
@@ -122,9 +145,11 @@
 						<span class="closeBtn">&times;</span>
 						<h2>Application</h2>
 						<p class="inner-p">Submit your application today</p>
-						<p>First name</p>
-						<p>Last name</p>
-						<p>Email address</p>
+						<form method="POST" enctype="">
+  						<input type="text" id="keywords" name="keywords" placeholder="First name">
+  						<input type="text" id="keywords" name="keywords" placeholder="Last name">
+  						<input type="text" id="keywords" name="keywords" placeholder="Email address">
+						</form>
 						<button class="submit">Submit your application</button>
 					</div>
 				</div>
