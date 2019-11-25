@@ -216,7 +216,7 @@ body{
 
 .application-two{
     width: 41.96875rem;
-    padding: 38px 116.5px 41.5px 0;
+    padding: 59px 116.5px 56.5px 0;
 }
 
 .application-one{
@@ -229,6 +229,7 @@ body{
     padding-right: 13px;
     color: rgba(0, 0, 0, 0.3);
     font-size: 1.125rem;
+    padding-top: 39px;
 }
 
 .application-two > .flex-container{
@@ -239,19 +240,23 @@ body{
     color: #000000;
     font-weight: bold;
     font-size: 1.5rem;
-    padding-bottom: 9px;
+    margin: 0;
+    padding-bottom: 34px;
 }
 
 .application-two p{
     font-weight: 500;
     color: rgba(0, 0, 0, 0.4);
     font-size: 1rem;
+    margin: 0;
 }
 
-.application-two > .flex-container p{
+.application-two > .flex-container a{
     font-weight: 600;
     font-size: 0.875rem;
     color: #073c77;
+    text-decoration: none;
+    padding-top: 39px;
 }
 
 .application{
@@ -442,6 +447,9 @@ iframe{
     position: absolute;
     top: 50%;
     left: 50%;
+    background-color: #e00b42;
+    z-index: 2;
+    border-radius: 50%;
 }
 
 #circle1{
@@ -456,22 +464,10 @@ iframe{
     left: 50%;
 }
 
-/*#shadowring{
-    height: 165px;
-    width: 165px;
-    border-radius: 50%;
-    box-shadow: 0 0 6px rgba(0, 0 , 0, 0.5);
-    transform: translate(-50%,-50%);
-    z-index: 99;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-}*/
-
 #circle2{
     height: 165px;
     width: 165px;
-    background-color: #e00b42;
+    background-color: #f5f5f5;
     border-radius: 50%;
     transform: translate(-50%,-50%);
     z-index: -1;
@@ -515,3 +511,90 @@ iframe{
     box-sizing: border-box;
     font-size: 22px;
 }
+
+.link{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgba(207, 223, 240, 0.9); 
+}
+
+.faq-content{
+    background-color: #ffffff;
+    margin: 3% auto;
+    padding: 20px;
+    max-width: 800px;
+   /* min-height: 706px;*/
+    box-shadow: 0px 4px 10px 0 rgba(0, 0, 0, 0.05);
+    padding: 52.5px 64px 82px 64px;
+    position: relative;
+}
+
+.closeFaq{
+    color: #000000;
+    font-weight: normal;
+    float: left;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 20px;
+    left: 25px;
+}
+
+.closeFaq:hover,.closeFaq:focus{
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.faq-content h2{
+    font-weight: bold;
+    color: #000000;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.faq-content p{
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 28px 0 44.5px 0;
+}
+
+.accordion {
+  color: #073c77;
+  cursor: pointer;
+  padding: 19px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.active, .accordion:hover {
+  background-color: #e6e6e6;
+}
+
+.panel {
+  padding: 0 19px;
+  display: none;
+  overflow: hidden;
+}
+
+.panel p{
+    font-size: 1.25rem;
+    font-weight: 400;
+    color:  #9b9b9b;
+}
+
+
+
+
