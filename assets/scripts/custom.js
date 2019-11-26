@@ -1,18 +1,15 @@
 // Submit your application button modal
 
 let modal = document.getElementById('simpleModal');
-
 let modalBtn = document.getElementById('modalBtn');
-
 let closeBtn = document.getElementsByClassName('closeBtn')[0];
 
 modalBtn.addEventListener('click', openModal);
-
 closeBtn.addEventListener('click', closeModal);
-
 window.addEventListener('click', outsideClick);
 
-function openModal(){
+function openModal(event){
+	event.preventDefault();
 	modal.style.display = 'block';
 }
 
@@ -28,7 +25,28 @@ function outsideClick(e){
 
 // FAQ modal link
 
+let link = document.getElementById('simpleLink');
+let modalFaq = document.getElementById('modalFaq');
+let closeFaq =document.getElementsByClassName('closeFaq')[0];
 
+modalFaq.addEventListener('click', openFaq);
+closeFaq.addEventListener('click', closeFaqModal);
+window.addEventListener('click', randomClick);
+
+function openFaq(event){
+	event.preventDefault();
+	link.style.display = 'block';
+}
+
+function closeFaqModal(){
+	link.style.display = 'none';
+}
+
+function randomClick(e){
+	if(e.target == link){
+		link.style.display = 'none';
+	}
+}
 
 // Application rate counter
 
@@ -41,24 +59,19 @@ let diff;
 
 function fillCounter(){
 	diff =((no/100) * Math.PI*2*10)
-
 	counter.clearRect(0,0,canvasWidth,canvasHeight);
-
-	counter.lineWidth = 13;
-
-	counter.fillStyle = '#000000';
-
-	counter.strokeStyle = '#073c77';
-
+	counter.lineWidth = 13; // blue stroke width
+	counter.fillStyle = '#000000'; //black text
 	counter.textAlign = 'center';
-
-	counter.font = "29px monospace";
-
-	counter.fillText(no+'%',100,110);
-
+	counter.font = "40px monospace"; // text size
 	counter.beginPath();
-	counter.arc(100,100,90,pointToFill,diff/10+pointToFill);
-
+	counter.arc(100,100,85,0,2 * Math.PI);
+	counter.strokeStyle = '#e00b42';
+	counter.stroke();
+	counter.beginPath();
+	counter.fillText(no+'%',100,110);
+	counter.strokeStyle = '#073c77';
+	counter.arc(100,100,85,pointToFill,diff/10+pointToFill);
 	counter.stroke();
 
 	if(no >= 87)
@@ -72,8 +85,8 @@ let fill = setInterval(fillCounter,50);
 
 // Calculator tabs
 
-var tabButtons =  document.querySelectorAll(".tabContainer .buttonContainer button");
-var tabPanels = document.querySelectorAll(".tabContainer .tabPanel");
+let tabButtons =  document.querySelectorAll(".tabContainer .buttonContainer button");
+let tabPanels = document.querySelectorAll(".tabContainer .tabPanel");
 
 function showPanel(panelIndex,colorCode){
 	tabButtons.forEach(function(node){
@@ -91,8 +104,38 @@ function showPanel(panelIndex,colorCode){
 
 showPanel(0, '#f44336');
 
+// FAQ accordion 
 
+let acc = document.getElementsByClassName("accordion");
+let i;
 
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    let panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
 
+// Calculator mortgage
 
+let slider = document.getElementById("myLoanRange");
+let output = document.getElementById("loans");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+
+let slider2 = document.getElementById("myPeriodRange");
+let output2 = document.getElementById("period");
+output2.innerHTML = slider2.value;
+
+slider2.oninput = function() {
+  output2.innerHTML = this.value;
+}
 
