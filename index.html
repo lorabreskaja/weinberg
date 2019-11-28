@@ -15,11 +15,16 @@
 					<a href="#"> <img src="assets/images/logo.svg" alt="Weinberg"></a>
 					<p>capital</p>
 				</div>
+				
 				<nav class="main-nav">
-				 <ul class="flex-container">
+					<div class="hamIcon">
+					<h1>&#9776;</h1>
+					</div>
+				 <ul class="flex-container mainMenu">
 					<li><a href="#">Home</a></li>
 					<li><a href="#">FAQ</a></li>
 					<li><a href="#">Apply</a></li>
+
 				</ul>
 				</nav> 
 		</header>
@@ -131,28 +136,27 @@
 							<div class="slidecontainer">
 							<div class="flex-container">
 							<p>Amount</p>
-							<p>$ <span id="loans"></span></p>
+							<p class="readouts">$ <span id="loans"></span></p>
 							</div>
-  							<input type="range" min="1" max="100000" value="20000" class="slider" id="myLoanRange">
+  							<input type="range" min="1" max="100000" value="20000" class="slider" id="myLoanRange" onchange="computeLoan()">
 							</div>
 
 							<div class="slidecontainer">
 							<div class="flex-container">
 							<p>Period</p>
-							<p><span id="period"></span> years</p>
+							<p class="readouts"><span id="period"></span> years</p>
 							</div>
-  							<input type="range" min="1" max="30" value="20" class="slider2" id="myPeriodRange">
+  							<input type="range" min="1" max="30" value="20" class="slider2" id="myPeriodRange" onchange="computeLoan()">
 							</div>
-
 
 							<div class="flex-container">
 								<p>Interest rate</p>
-								<p>2.0%</p>
+								<p class="readouts">2.0%</p>
 							</div>
 
 							<div class="flex-container">
 								<p>Monthly payment</p>
-								<p>???</p>
+								<p id ="payment"></p>
 							</div>
 
 						<div class="tabPanel">Tab 2: Content</div>
