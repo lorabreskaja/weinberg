@@ -93,13 +93,13 @@ function showPanel(panelIndex,colorCode){
 		node.style.backgroundColor = "";
 		node.style.color = "";
 	});
-	tabButtons[panelIndex].style.backgroundColor = colorCode;
-	tabButtons[panelIndex].style.color = "white";
+	tabButtons[panelIndex].style.backgroundColor = "";
+	tabButtons[panelIndex].style.color = "#e00b42";
 	tabPanels.forEach(function(node){
 		node.style.display = "none";
 	});
 	tabPanels[panelIndex].style.display = "block";
-	tabPanels[panelIndex].style.backgroundColor = colorCode;
+	tabPanels[panelIndex].style.backgroundColor = "";
 }
 
 showPanel(0, '#f44336');
@@ -121,6 +121,17 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+
+// Burger menu
+
+function toggleClass(){
+	let menu = document.querySelector(".mainMenu");
+	menu.classList.toggle("toggleCls");
+}
+
+let hamburger = document.querySelector(".hamIcon");
+hamburger.addEventListener("click", toggleClass);
+
 // Calculator mortgage
 
 let slider = document.getElementById("myLoanRange");
@@ -135,7 +146,17 @@ let slider2 = document.getElementById("myPeriodRange");
 let output2 = document.getElementById("period");
 output2.innerHTML = slider2.value;
 
+
 slider2.oninput = function() {
   output2.innerHTML = this.value;
 }
 
+function computeLoan(){
+	let months = slider2.value * 12;
+	let interest = (slider.value * (2 * .01)) / months;
+	let payment = ((slider.value / months) + interest).toFixed(2);
+	payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	document.getElementById('payment').innerHTML = "$" + payment;
+}
+
+computeLoan();
