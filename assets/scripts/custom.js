@@ -48,6 +48,31 @@ function randomClick(e){
 	}
 }
 
+// Successful application modal link
+
+// let success = document.getElementById('successModal');
+// let successBtn = document.getElementById('successBtn');
+// let closeSuccess =document.getElementsByClassName('closeSuccess')[0];
+
+// successBtn.addEventListener('click', openSuccess);
+// closeSuccess.addEventListener('click', closeSuccessModal);
+// window.addEventListener('click', outClick);
+
+// function openSuccess(event){
+// 	event.preventDefault();
+// 	link.style.display = 'block';
+// }
+
+// function closeSuccessModal(){
+// 	link.style.display = 'none';
+// }
+
+// function outClick(e){
+// 	if(e.target == link){
+// 		link.style.display = 'none';
+// 	}
+// }
+
 // Application rate counter
 
 let counter = document.getElementById('counter').getContext('2d');
@@ -99,10 +124,10 @@ function showPanel(panelIndex,colorCode){
 		node.style.display = "none";
 	});
 	tabPanels[panelIndex].style.display = "block";
-	tabPanels[panelIndex].style.backgroundColor = "";
+	tabPanels[panelIndex].style.backgroundColor = colorCode;
 }
 
-showPanel(0, '#f44336');
+showPanel(0, '#ffffff');
 
 // FAQ accordion 
 
@@ -120,17 +145,6 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
-
-
-// Burger menu
-
-function toggleClass(){
-	let menu = document.querySelector(".mainMenu");
-	menu.classList.toggle("toggleCls");
-}
-
-let hamburger = document.querySelector(".hamIcon");
-hamburger.addEventListener("click", toggleClass);
 
 // Calculator mortgage
 
@@ -160,3 +174,43 @@ function computeLoan(){
 }
 
 computeLoan();
+
+// Header sticky fix
+
+window.onscroll = function() {myFunction()};
+
+let header = document.getElementById("myHeader");
+let sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+
+//Burger menu
+
+function toggleClass(){
+	let menu = document.querySelector(".mainMenu");
+	menu.classList.toggle("toggleCls");
+}
+
+let hamburger = document.querySelector(".hamIcon");
+hamburger.addEventListener("click", toggleClass);
+
+
+// Find class succes or error
+
+// let success = document.querySelector("success");
+// let error = document.querySelector("error");
+
+// if (success) {
+// 	console.log("success");
+// }
+// else if (error){
+// 	console.log("error");
+// }
+
+
