@@ -23,7 +23,7 @@ function outsideClick(e){
 	}
 }
 
-// FAQ modal link
+// FAQ modal slink
 
 let link = document.getElementById('simpleLink');
 let modalFaq = document.getElementById('modalFaq');
@@ -47,31 +47,6 @@ function randomClick(e){
 		link.style.display = 'none';
 	}
 }
-
-// Successful application modal link
-
-// let success = document.getElementById('successModal');
-// let successBtn = document.getElementById('successBtn');
-// let closeSuccess =document.getElementsByClassName('closeSuccess')[0];
-
-// successBtn.addEventListener('click', openSuccess);
-// closeSuccess.addEventListener('click', closeSuccessModal);
-// window.addEventListener('click', outClick);
-
-// function openSuccess(event){
-// 	event.preventDefault();
-// 	link.style.display = 'block';
-// }
-
-// function closeSuccessModal(){
-// 	link.style.display = 'none';
-// }
-
-// function outClick(e){
-// 	if(e.target == link){
-// 		link.style.display = 'none';
-// 	}
-// }
 
 // Application rate counter
 
@@ -146,7 +121,7 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-// Calculator mortgage
+// Calculator sliders
 
 let slider = document.getElementById("myLoanRange");
 let output = document.getElementById("loans");
@@ -165,15 +140,72 @@ slider2.oninput = function() {
   output2.innerHTML = this.value;
 }
 
+let slider3 = document.getElementById("myLoanRange2");
+let output3 = document.getElementById("loans2");
+output3.innerHTML = slider3.value;
+
+slider3.oninput = function() {
+  output3.innerHTML = this.value;
+}
+
+let slider4 = document.getElementById("myPeriodRange2");
+let output4 = document.getElementById("period2");
+output4.innerHTML = slider4.value;
+
+
+slider4.oninput = function() {
+  output4.innerHTML = this.value;
+}
+
+let slider5 = document.getElementById("myLoanRange3");
+let output5 = document.getElementById("loans3");
+output5.innerHTML = slider5.value;
+
+slider5.oninput = function() {
+  output5.innerHTML = this.value;
+}
+
+let slider6 = document.getElementById("myPeriodRange3");
+let output6 = document.getElementById("period3");
+output6.innerHTML = slider6.value;
+
+
+slider6.oninput = function() {
+  output6.innerHTML = this.value;
+}
+
+// Calculator loan compute
+
 function computeLoan(){
 	let months = slider2.value * 12;
-	let interest = (slider.value * (2 * .01)) / months;
+	let interest = (slider.value * (3 * .01)) / months;
 	let payment = ((slider.value / months) + interest).toFixed(2);
 	payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	document.getElementById('payment').innerHTML = "$" + payment;
 }
 
 computeLoan();
+
+
+function computeLoan2(){
+	let months = slider4.value * 12;
+	let interest = (slider3.value * (4 * .01)) / months;
+	let payment2 = ((slider3.value / months) + interest).toFixed(2);
+	payment2 = payment2.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	document.getElementById('payment2').innerHTML = "$" + payment2;
+}
+
+computeLoan2();
+
+function computeLoan3(){
+	let months = slider6.value * 12;
+	let interest = (slider5.value * (12 * .01)) / months;
+	let payment3 = ((slider5.value / months) + interest).toFixed(2);
+	payment3 = payment3.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	document.getElementById('payment3').innerHTML = "$" + payment3;
+}
+
+computeLoan3();
 
 // Header sticky fix
 
@@ -200,17 +232,45 @@ function toggleClass(){
 let hamburger = document.querySelector(".hamIcon");
 hamburger.addEventListener("click", toggleClass);
 
+//Menu items and calculate button smooth scroll
 
-// Find class succes or error
+function smoothScroll(target, duration){
+	var target = document.querySelector(target);
+	var targetPosition = target.getBoundingClientRect().top;
+	var startPosition = window.pageYOffset;
+	var distance = targetPosition - startPosition;
+	var startTime = null;
 
-// let success = document.querySelector("success");
-// let error = document.querySelector("error");
+	function animation(currentTime){
+		if (startTime === null)	startTime = currentTime;
+		var timeElapsed = currentTime - startTime;
+		var run = ease(timeElapsed, startPosition, distance, duration);
+		window.scrollTo(0, run);
+		if (timeElapsed < duration) requestAnimationFrame(animation);
+	}
 
-// if (success) {
-// 	console.log("success");
-// }
-// else if (error){
-// 	console.log("error");
-// }
+	function ease(t, b, c, d){
+		t /= d / 2;
+		if (t < 1) return c / 2 * t * t + b;
+		t--;
+		return -c / 2 * (t * (t - 2) - 1) + b; 
+	}
 
+	requestAnimationFrame(animation);
+}
+
+let scrollToFaq = document.querySelector('#scrollToFaq');
+scrollToFaq.addEventListener('click', function(){
+	smoothScroll('#scrollToFaq2', 1000);
+});
+
+let scrollToApply = document.querySelector('#scrollToApply');
+scrollToApply.addEventListener('click', function(){
+	smoothScroll('#scrollToApply2', 1000);
+});
+
+var scrollToCalculator = document.querySelector('.scrollToCalculator');
+scrollToCalculator.addEventListener('click', function(){
+	smoothScroll('.scrollToCalculator2', 1000);
+});
 
