@@ -34,8 +34,6 @@
     font-style: normal;
 }
 
-
-
 *,
 *::before,
 *::after{
@@ -374,6 +372,13 @@ header{
     width: 100%;
 }
 
+#copyright{
+    font-size: 0.6875rem;
+    color: rgba(0, 0, 0, 0.2);
+    font-weight: 500;
+    padding-top: 7px;
+}
+
 iframe{
     border: 0;
     width: 100%;
@@ -492,7 +497,9 @@ iframe{
     color: #000000;
 }
 
-#payment{
+#payment,
+#payment2,
+#payment3{
     color: #000000;
     font-weight: bold;
     font-size: 1.25rem;
@@ -519,7 +526,6 @@ iframe{
     margin: 3% auto;
     padding: 20px;
     max-width: 800px;
-   /* min-height: 706px;*/
     box-shadow: 0px 4px 10px 0 rgba(0, 0, 0, 0.05);
     padding: 52.5px 64px 82px 64px;
     position: relative;
@@ -591,28 +597,17 @@ iframe{
 }
 
 .slider,
-.slider2{
+.slider2,
+.slider3,
+.slider4,
+.slider5,
+.slider6{
     width: 100%;
     background-color: #efefef;
     border-radius: 2px;
     outline: none;
     transition: opacity .2s;
 }
-
-/*.slider:hover,
-.slider2:hover{
-    opacity: 1;
-}*/
-
-/*.slider::slider-thumb,
-.slider2::slider-thumb{
-    width: 20px;
-    height: 20px;
-    box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.05);
-    border: solid 1px #e1e1e1;
-    background-color: #ffffff;
-    cursor: pointer;
-}*/
 
 .hamIcon h1{
     margin: 0;
