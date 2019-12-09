@@ -44,14 +44,12 @@ if (isset($_POST['reg_user'])) {
   			  VALUES('$name', '$surname', '$email')";
   	mysqli_query($db, $query);
   	$_SESSION['name'] = $name;
-  	$_SESSION['success'] = $success;
+  	$_SESSION['success'] = "You are now logged in";
     
   }
   else {
     $_SESSION['failure'] = $errors;
   }
-  
-  //header('Location: http://'.$_SERVER['HTTP_HOST'].'/weinberg/index.php');
 }
 
 
